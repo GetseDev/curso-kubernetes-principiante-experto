@@ -1,0 +1,4 @@
+Crear un pod
+kubectl run podtest --image=nginx:alpine
+
+Ver descripcion de un pod
