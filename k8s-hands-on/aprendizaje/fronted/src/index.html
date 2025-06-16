@@ -1,0 +1,21 @@
+<div id="id01"></div>
+
+<img src="https://harness.io/wp-content/uploads/2017/09/kubernetes-3.png" alt="Kubernetes">
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:8082";
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = JSON.parse(this.responseText);
+            document.getElementById("id01").innerHTML = 
+                "<h2>La hora es " + resp.time + " y el hostname es " + resp.hostname + "</h2>";
+        }
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+});
+</script>
